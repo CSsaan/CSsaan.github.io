@@ -1,20 +1,16 @@
 ---
 layout:     post
-title:      "Hello ViTMatting"
+title:      "ViTMatting"
 subtitle:   " alpha matting by Vision Transformer"
 date:       2024-07-30 18:00:00
 author:     "CS"
 header-img: "img/post-bg-2015.jpg"
 catalog: true
 tags:
-    - Meta
+    - ViT
+    - Matting
 ---
 
-Title: GitHub - CSsaan/EMA-ViTMatting
-
-URL Source: https://github.com/CSsaan/EMA-ViTMatting
-
-Markdown Content:
 EMA-ViTMatting
 --------------
 
