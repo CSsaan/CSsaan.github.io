@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "Hello ViTMatting"
-subtitle:   " \"Hello World, Hello Blog\""
+subtitle:   " alpha matting by Vision Transformer"
 date:       2024-07-30 18:00:00
 author:     "CS"
 header-img: "img/post-bg-2015.jpg"
