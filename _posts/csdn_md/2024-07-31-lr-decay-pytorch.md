@@ -17,8 +17,10 @@ tags:
 
 学习率不断衰减是一个提高精度的好方法。其中有cosine decay和step decay等。前者是让学习率随着训练过程曲线下降；后者是随着epoch增大学习率不断减去一个小的数。  
 对于cosine decay，假设总共有T个batch（不考虑warmup阶段），在第t个batch时，学习率η\_t为:
-![cosine decay](https://i-blog.csdnimg.cn/blog_migrate/aa9e8828f2e7696d40a0472585a7f34a.jpeg)  
-![cosine decay curve](https://i-blog.csdnimg.cn/blog_migrate/a053ee6359837c0a642417ec033d1b49.png)
+
+![](https://i-blog.csdnimg.cn/blog_migrate/aa9e8828f2e7696d40a0472585a7f34a.jpeg)  
+
+![](https://i-blog.csdnimg.cn/blog_migrate/a053ee6359837c0a642417ec033d1b49.png)
 
 > ___注意___：
 > - 图中的lr是lambda1\*lr\_rate的结果;
@@ -64,7 +66,7 @@ plt.show()
 
 ### 2. warmup step decay
 
-![Image 3: 在这里插入图片描述](https://i-blog.csdnimg.cn/blog_migrate/f15829c8242cb21184052aaf5573ec95.png)
+![](https://i-blog.csdnimg.cn/blog_migrate/f15829c8242cb21184052aaf5573ec95.png)
 
 ``` python
 # -*- coding:utf-8 -*-
@@ -168,4 +170,6 @@ if __name__ == '__main__':
 
 ### 3. 两者性能对比
 
-图(a)是学习率随epoch增大而下降的图，可以看出cosine decay比step decay更加平滑一点。图(b)是准确率随epoch的变化图，两者最终的准确率没有太大差别，不过cosine decay的学习过程更加平滑。至于哪个效果好，可能对于不同问题答案是不一样的，要具体实验。![Image 5: 在这里插入图片描述](https://i-blog.csdnimg.cn/blog_migrate/ebfa706599f4c4b467caaa7ca0615a0e.jpeg) 
+图(a)是学习率随epoch增大而下降的图，可以看出cosine decay比step decay更加平滑一点。图(b)是准确率随epoch的变化图，两者最终的准确率没有太大差别，不过cosine decay的学习过程更加平滑。至于哪个效果好，可能对于不同问题答案是不一样的，要具体实验。
+
+![](https://i-blog.csdnimg.cn/blog_migrate/ebfa706599f4c4b467caaa7ca0615a0e.jpeg) 
