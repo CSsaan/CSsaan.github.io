@@ -70,7 +70,7 @@ tags:
  - *BatchSize*：选择批处理大小。一般太大会爆显存或内存，自己尝试找到适合自己电脑的最大值（一般不超过5）；
  - *ScaleRate*：帧率提升的倍数。一般30帧视频可以选择设置为3倍，提升至90帧（帧数提升倍数越多，处理时间也会跟着翻倍，所以超过120帧就没必要了）；
  
- <center><img src="https://i-blog.csdnimg.cn/blog_migrate/e15f03e0ec91f4f13a0886fc913d4bed.png"   width="80%">
+ <center><img src="http://i-blog.csdnimg.cn/blog_migrate/e15f03e0ec91f4f13a0886fc913d4bed.png"   width="80%">
 <center><b><font size ='3'>主界面</font></b></center></font>
 
 **3.Start Run**
@@ -86,15 +86,15 @@ tags:
 **错误一：**
 
 > 不支持显卡GPU cuda加速。 根据上面的方法：判断GPU是否可用，来自行判断。如果不支持GPU，则取消勾选GPU按钮再尝试重新运行。
- <center><img src="https://i-blog.csdnimg.cn/blog_migrate/9d4ee426b03984204666254f05c529d7.png"   width="80%">
+ <center><img src="http://i-blog.csdnimg.cn/blog_migrate/9d4ee426b03984204666254f05c529d7.png"   width="80%">
 <center><b><font size ='3'>错误一</font></b></center></font>
 
 **错误二：**
 
 > BatchSize设置太大了，爆显存、内存了，尝试调小。如果调到2还是爆内存，那就是电脑配置不行了。
 
- <center><img src="https://i-blog.csdnimg.cn/blog_migrate/f5787448a38f3825ab0403494f8ac701.png"   width="80%">
-<center><img src="https://i-blog.csdnimg.cn/blog_migrate/33241d0e3aa206c1f4cedd48c7f72329.png"   width="80%">
+ <center><img src="http://i-blog.csdnimg.cn/blog_migrate/f5787448a38f3825ab0403494f8ac701.png"   width="80%">
+<center><img src="http://i-blog.csdnimg.cn/blog_migrate/33241d0e3aa206c1f4cedd48c7f72329.png"   width="80%">
 
 <center><b><font size ='3'>错误二</font></b></center></font>
 
@@ -102,14 +102,14 @@ tags:
 
 > *Input Dir*、*Output Dir* 输入、输出路径没有选择。
 
- <center><img src="https://i-blog.csdnimg.cn/blog_migrate/a0abb8e2942f7a2d0badca76c18c3102.png"   width="80%">
+ <center><img src="http://i-blog.csdnimg.cn/blog_migrate/a0abb8e2942f7a2d0badca76c18c3102.png"   width="80%">
 <center><b><font size ='3'>错误三</font></b></center></font>
 
 **成功运行：**
 
 > 分别显示的是：*完成百分比*、*已运行时间*、*预计剩余时间*。
 
- <center><img src="https://i-blog.csdnimg.cn/blog_migrate/878add529f9c30e849f72e29bc4819cc.png"   width="80%">
+ <center><img src="http://i-blog.csdnimg.cn/blog_migrate/878add529f9c30e849f72e29bc4819cc.png"   width="80%">
 <center><b><font size ='3'>成功运行</font></b></center></font>
 
 # 总结

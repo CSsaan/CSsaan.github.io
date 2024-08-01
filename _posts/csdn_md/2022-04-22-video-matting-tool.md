@@ -28,60 +28,59 @@ tags:
 示例：在人像背景较为单调的场景，效果还是不错。但是背景与人像颜色相近的地方效果较差，这也是目前大多数算法主要解决的问题。
 ## 1.图片抠图效果
 
-![原图](https://i-blog.csdnimg.cn/blog_migrate/d4b85bf7302fd0d3aebcf1828c553ba7.jpeg =400x)
+![原图](http://i-blog.csdnimg.cn/blog_migrate/d4b85bf7302fd0d3aebcf1828c553ba7.jpeg)
  <center>1.1原图</center>
- 
 
-![](https://i-blog.csdnimg.cn/blog_migrate/b39b0350ec549bcf9d7ba4ff4dc65b4f.png =400x)
+![](http://i-blog.csdnimg.cn/blog_migrate/b39b0350ec549bcf9d7ba4ff4dc65b4f.png)
  <center>1.2 其他方法效果</center>
 
-![](https://i-blog.csdnimg.cn/blog_migrate/49ce707904142c09266a18a1d928acb1.jpeg =400x)
+![](http://i-blog.csdnimg.cn/blog_migrate/49ce707904142c09266a18a1d928acb1.jpeg)
 <center>1.3 本工具效果</center>
 
-![](https://i-blog.csdnimg.cn/blog_migrate/3b9a8756b5fa8a37a363d3f4574801d9.jpeg =400x)
+![](http://i-blog.csdnimg.cn/blog_migrate/3b9a8756b5fa8a37a363d3f4574801d9.jpeg)
 <center>2.1 原图</center>
 
-![](https://i-blog.csdnimg.cn/blog_migrate/38f5440c9d20e454c4f1e5509e1cc816.png =400x)
+![](http://i-blog.csdnimg.cn/blog_migrate/38f5440c9d20e454c4f1e5509e1cc816.png)
 
 <center>2.2 其他方法效果</center>
 
-![](https://i-blog.csdnimg.cn/blog_migrate/ba78dfeee7aaaa64be9aaabf0209da4b.jpeg =400x)
+![](http://i-blog.csdnimg.cn/blog_migrate/ba78dfeee7aaaa64be9aaabf0209da4b.jpeg)
 <center>2.3 本工具效果</center>
 
-![](https://i-blog.csdnimg.cn/blog_migrate/58737243408470ae89a4e9d0511c1d06.jpeg =400x)
+![](http://i-blog.csdnimg.cn/blog_migrate/58737243408470ae89a4e9d0511c1d06.jpeg)
 <center>3.1 原图</center>
 
-![](https://i-blog.csdnimg.cn/blog_migrate/a5f45963c3da1a3c6ede9a63e01f4573.png =400x)
+![](http://i-blog.csdnimg.cn/blog_migrate/a5f45963c3da1a3c6ede9a63e01f4573.png)
 <center>3.2 其他方法效果</center>
 
-![](https://i-blog.csdnimg.cn/blog_migrate/ebdc9a08a5ce7f06f4ba8104cd87e3c4.jpeg =400x)
+![](http://i-blog.csdnimg.cn/blog_migrate/ebdc9a08a5ce7f06f4ba8104cd87e3c4.jpeg)
 <center>3.3 本工具效果</center>
 
-![](https://i-blog.csdnimg.cn/blog_migrate/0979c75fa2143bd3b826535e00ed3aae.jpeg =400x)
+![](http://i-blog.csdnimg.cn/blog_migrate/0979c75fa2143bd3b826535e00ed3aae.jpeg)
 <center>4.1 原图</center>
 
-![](https://i-blog.csdnimg.cn/blog_migrate/80567ede3e4c3159461aa01bd00d6212.png =400x)
+![](http://i-blog.csdnimg.cn/blog_migrate/80567ede3e4c3159461aa01bd00d6212.png)
 
 <center>4.2 其他方法效果</center>
 
-![](https://i-blog.csdnimg.cn/blog_migrate/06bf4b069e1c8c53be79a29ae0637017.jpeg =400x)
+![](http://i-blog.csdnimg.cn/blog_migrate/06bf4b069e1c8c53be79a29ae0637017.jpeg)
 <center>4.3 本工具效果</center>
 
 ## 2.视频抠图效果
 
 
 
-![](https://i-blog.csdnimg.cn/blog_migrate/8e015481eed018ddb7929002a1b310b8.gif =400x)<center>2.1 原视频</center>
-![](https://i-blog.csdnimg.cn/blog_migrate/e1e5e7d00932da633ea79f3a1a7efbd3.gif =400x)
+![](http://i-blog.csdnimg.cn/blog_migrate/8e015481eed018ddb7929002a1b310b8.gif)<center>2.1 原视频</center>
+![](http://i-blog.csdnimg.cn/blog_migrate/e1e5e7d00932da633ea79f3a1a7efbd3.gif)
 <center>2.2 这是无绿幕免费在线处理效果</center>
 
-![](https://i-blog.csdnimg.cn/blog_migrate/079fcbb30675b5202179982ace0517ae.gif  =400x)
+![](http://i-blog.csdnimg.cn/blog_migrate/079fcbb30675b5202179982ace0517ae.gif)
 <center>2.3 本工具处理效果</center>
 
 总结：
 相较于免费的抠图工具，视频抠图效果还好，但是还有一些较为模糊的画面处理的不是很好。在图片抠图效果上，某些场景可能效果较差。
 # 二、采用的方法
-![](https://i-blog.csdnimg.cn/blog_migrate/1c920e47fbd529aaf4b49ac1a0e56401.png)
+![](http://i-blog.csdnimg.cn/blog_migrate/1c920e47fbd529aaf4b49ac1a0e56401.png)
 
 作者原代码为pytorch环境上训练的类Unet结构模型。主要分类编码、解码与上采样输出几个部分，具体不再赘述，可参考一下别人的[分析博客](https://blog.csdn.net/m_buddy/article/details/120298395)。
 训练所使用的数据集包括：人像语义分割数据集、matting抠图数据集。采用的损失包括了：alpha通道L1损失与拉普拉斯金字塔损失、时序相关性损失、fg部分的L1损失和时序相关损失。将模型权重文件转换为onnx模型，本来想做个量化，所以现在处理时间可能稍久···，所以可以考虑后续加快预测处理速度，增加半精度选择、模型剪枝量化处理吧。
@@ -92,7 +91,7 @@ tags:
 *Input Dir*：选择所需处理的视频、图片；
 *Output Dir*：选择保存位置文件夹；
 *Model weight*：模型权重，选择weights文件夹下的model.onnx；
-![](https://i-blog.csdnimg.cn/blog_migrate/27e2316c81146189da2aa64b7368a5df.png =600x)
+![](http://i-blog.csdnimg.cn/blog_migrate/27e2316c81146189da2aa64b7368a5df.png)
 ## 2.Advance设置
 *Show Result*：可以实时显示处理过程（但由于显示控件问题，弹出显示了），但是由于cv2显示会影响处理速度，可以考虑去掉勾勾；
 *mode*：选择处理的是视频还是图片；
