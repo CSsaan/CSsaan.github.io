@@ -73,7 +73,7 @@ plt.ylabel("learning rate")
 plt.plot(x, y)
 ```
 
-![Image 4: 在这里插入图片描述](https://i-blog.csdnimg.cn/blog_migrate/5dc26aea3aeb831326fc18a08d1c10fc.png)
+![Image 4: 在这里插入图片描述](http://i-blog.csdnimg.cn/blog_migrate/5dc26aea3aeb831326fc18a08d1c10fc.png)
 
 ------------------
 
@@ -131,7 +131,7 @@ plt.plot(x,y)
 torch.optim.lr_scheduler.ExponentialLR(optimizer, gamma, last_epoch=-1)
 ```
 
-![Image 5: 在这里插入图片描述](https://i-blog.csdnimg.cn/blog_migrate/bf9c8cf46d9bc9243bf432f1c10a4c0e.png)
+![Image 5: 在这里插入图片描述](http://i-blog.csdnimg.cn/blog_migrate/bf9c8cf46d9bc9243bf432f1c10a4c0e.png)
 
 ------------------
 
@@ -196,7 +196,7 @@ plt.show()
 torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max, eta_min=0, last_epoch=-1)
 ```
 
-![Image 6: 在这里插入图片描述](https://i-blog.csdnimg.cn/blog_migrate/b98c7f1cb4a112b30a04b8d0ae242742.png)
+![Image 6: 在这里插入图片描述](http://i-blog.csdnimg.cn/blog_migrate/b98c7f1cb4a112b30a04b8d0ae242742.png)
 
 ------------------
 
