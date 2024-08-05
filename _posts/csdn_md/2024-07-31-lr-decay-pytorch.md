@@ -73,7 +73,7 @@ plt.ylabel("learning rate")
 plt.plot(x, y)
 ```
 
-![Image 4: 在这里插入图片描述](https://i-blog.csdnimg.cn/blog_migrate/5dc26aea3aeb831326fc18a08d1c10fc.png)
+![Image 4: 在这里插入图片描述](http://i-blog.csdnimg.cn/blog_migrate/5dc26aea3aeb831326fc18a08d1c10fc.png)
 
 ------------------
 
@@ -131,7 +131,7 @@ plt.plot(x,y)
 torch.optim.lr_scheduler.ExponentialLR(optimizer, gamma, last_epoch=-1)
 ```
 
-![Image 5: 在这里插入图片描述](https://i-blog.csdnimg.cn/blog_migrate/bf9c8cf46d9bc9243bf432f1c10a4c0e.png)
+![Image 5: 在这里插入图片描述](http://i-blog.csdnimg.cn/blog_migrate/bf9c8cf46d9bc9243bf432f1c10a4c0e.png)
 
 ------------------
 
@@ -140,9 +140,9 @@ torch.optim.lr_scheduler.ExponentialLR(optimizer, gamma, last_epoch=-1)
 cosine decay,是让学习率随着训练过程曲线下降。  
 对于cosine decay，假设总共有T个batch（不考虑warmup阶段），在第t个batch时，学习率η\_t为:
 
-![](https://i-blog.csdnimg.cn/blog_migrate/aa9e8828f2e7696d40a0472585a7f34a.jpeg)  
+![](http://i-blog.csdnimg.cn/blog_migrate/aa9e8828f2e7696d40a0472585a7f34a.jpeg)  
 
-![](https://i-blog.csdnimg.cn/blog_migrate/a053ee6359837c0a642417ec033d1b49.png)
+![](http://i-blog.csdnimg.cn/blog_migrate/a053ee6359837c0a642417ec033d1b49.png)
 
 > ___注意___：
 > - 图中的lr是lambda1\*lr\_rate的结果;
@@ -196,7 +196,7 @@ plt.show()
 torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max, eta_min=0, last_epoch=-1)
 ```
 
-![Image 6: 在这里插入图片描述](https://i-blog.csdnimg.cn/blog_migrate/b98c7f1cb4a112b30a04b8d0ae242742.png)
+![Image 6: 在这里插入图片描述](http://i-blog.csdnimg.cn/blog_migrate/b98c7f1cb4a112b30a04b8d0ae242742.png)
 
 ------------------
 

@@ -27,7 +27,7 @@ Tokenizer
 
 基本的流程如图所示，包括归一化，预分词，基于分词模型的切分，后处理4个步骤。
 
-![Tokenizer](https://i-blog.csdnimg.cn/blog_migrate/e4f1b15c311418f1f81532c10695b0f6.png)
+![Tokenizer](http://i-blog.csdnimg.cn/blog_migrate/e4f1b15c311418f1f81532c10695b0f6.png)
 
 #### **1. 归一化**
 

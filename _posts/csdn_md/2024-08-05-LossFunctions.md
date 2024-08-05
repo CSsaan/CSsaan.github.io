@@ -19,7 +19,7 @@ tags:
 计算 output 和 target 之差的绝对值。
 
 公式：
-![L1Loss](https://i-blog.csdnimg.cn/blog_migrate/2e545d499616ad8315e205e178f282cc.png) 
+![L1Loss](http://i-blog.csdnimg.cn/blog_migrate/2e545d499616ad8315e205e178f282cc.png) 
 
 $$
 \ell(x, y) = L = \{l_1,\dots,l_N\}^\top, \quad
@@ -48,7 +48,7 @@ print(loss)                                 # 输出结果：tensor(0.5000)
 
 计算 output 和 target 之差的均方差。
 
-![MSELoss](https://i-blog.csdnimg.cn/blog_migrate/442895b21406698a06831b733b224b37.png)
+![MSELoss](http://i-blog.csdnimg.cn/blog_migrate/442895b21406698a06831b733b224b37.png)
 
 $$
 \ell(x, y) = L = \{l_1,\dots,l_N\}^\top, \quad

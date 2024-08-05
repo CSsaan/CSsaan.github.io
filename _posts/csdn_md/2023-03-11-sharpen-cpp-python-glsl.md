@@ -49,15 +49,15 @@ When calculating the `gradient of the image` (the intensity of change between pi
 拉普拉斯是一种二阶微分计算。通过在原始图像上应用拉普拉斯滤波器来增强图像中的边缘和细节，边缘定位准确，对噪声非常敏感。
 推导出的拉普拉斯卷积核两个常用示例如下。拉普拉斯卷积核中心值比较大，意味着在做计算中，图像当前像素值占权重较大，锐化时为了增大与周围像素的差异，周围像素值较小。在卷积核中，中心像素值为9，表示将中心像素的强度值增加，周围像素的强度值减少。这样，锐化后的图像将具有更强的边缘和更清晰的细节。这就会使得计算后突变的像素更加突出，慢变的像素相对弱化。
 
-![image1](https://i-blog.csdnimg.cn/blog_migrate/1217fce809787e67cf130bdece2f2cb4.jpeg)
+![image1](http://i-blog.csdnimg.cn/blog_migrate/1217fce809787e67cf130bdece2f2cb4.jpeg)
 
 <p style="text-align: center;">拉普拉斯算子</p>
  
-![image2](https://i-blog.csdnimg.cn/blog_migrate/f5ef0ca00539f65ad0ee250728820d0a.jpeg)
+![image2](http://i-blog.csdnimg.cn/blog_migrate/f5ef0ca00539f65ad0ee250728820d0a.jpeg)
 
 <p style="text-align: center;">原图</p>
  
-![image3](https://i-blog.csdnimg.cn/blog_migrate/2202c929cb635911ce109b2c5abfc531.jpeg)
+![image3](http://i-blog.csdnimg.cn/blog_migrate/2202c929cb635911ce109b2c5abfc531.jpeg)
 
 
 <p style="text-align: center;">laplace</p>
@@ -72,27 +72,27 @@ When calculating the `gradient of the image` (the intensity of change between pi
 该卷积核的中心权重很大，周围随着距离增加权重系数逐渐降低。示例两种高斯——拉普拉斯卷积核如下： 
 
 
-![1](https://i-blog.csdnimg.cn/blog_migrate/1c06215a6e0cdbb3624c3f11d8ed3f22.jpeg)
+![1](http://i-blog.csdnimg.cn/blog_migrate/1c06215a6e0cdbb3624c3f11d8ed3f22.jpeg)
 
-![2](https://i-blog.csdnimg.cn/blog_migrate/4589b593b4368a5503f289fc9d4ba34f.jpeg)
+![2](http://i-blog.csdnimg.cn/blog_migrate/4589b593b4368a5503f289fc9d4ba34f.jpeg)
 
-![3](https://i-blog.csdnimg.cn/blog_migrate/765564c42e785653dac33594ac0700e6.jpeg)
+![3](http://i-blog.csdnimg.cn/blog_migrate/765564c42e785653dac33594ac0700e6.jpeg)
 
 （下为Usharpe Masking法）
 
 
 
 
-![image4](https://i-blog.csdnimg.cn/blog_migrate/f5ef0ca00539f65ad0ee250728820d0a.jpeg)
+![image4](http://i-blog.csdnimg.cn/blog_migrate/f5ef0ca00539f65ad0ee250728820d0a.jpeg)
 
 <p style="text-align: center;">原图</p>
  
-![image5](https://i-blog.csdnimg.cn/blog_migrate/d106b9118da2507bbbfeaad23ddacabf.jpeg)
+![image5](http://i-blog.csdnimg.cn/blog_migrate/d106b9118da2507bbbfeaad23ddacabf.jpeg)
 
 <p style="text-align: center;">LoG（中间算子）</p>
 <p style="text-align: center;">（相较于Laplace效果更加平滑）</p>
 
-![image6](https://i-blog.csdnimg.cn/blog_migrate/a5657d3fff6cf21e3bf6ecafcc9b96f5.jpeg)
+![image6](http://i-blog.csdnimg.cn/blog_migrate/a5657d3fff6cf21e3bf6ecafcc9b96f5.jpeg)
 
 
 <p style="text-align: center;">Usharpe Masking（右算子）</p>
@@ -104,20 +104,20 @@ When calculating the `gradient of the image` (the intensity of change between pi
 
 是一种斜向偏差分的梯度计算方法，梯度的大小代表边缘的强度，梯度的方向与边缘的走向垂直。卷积核如下：
 
-![image7](https://i-blog.csdnimg.cn/blog_migrate/1f8511e93f886183adedea5f0f31ffa4.jpeg)
-![image8](https://i-blog.csdnimg.cn/blog_migrate/d7a9f90dfe99a0890e925343148d7494.jpeg)
+![image7](http://i-blog.csdnimg.cn/blog_migrate/1f8511e93f886183adedea5f0f31ffa4.jpeg)
+![image8](http://i-blog.csdnimg.cn/blog_migrate/d7a9f90dfe99a0890e925343148d7494.jpeg)
 
 <p style="text-align: center;">Roberts算子</p>
    
-![image9](https://i-blog.csdnimg.cn/blog_migrate/f5ef0ca00539f65ad0ee250728820d0a.jpeg)
+![image9](http://i-blog.csdnimg.cn/blog_migrate/f5ef0ca00539f65ad0ee250728820d0a.jpeg)
 
 <p style="text-align: center;">原图</p>
 
-![image10](https://i-blog.csdnimg.cn/blog_migrate/6914bb706d85a92ebe4130b532c394ab.jpeg)
+![image10](http://i-blog.csdnimg.cn/blog_migrate/6914bb706d85a92ebe4130b532c394ab.jpeg)
 
 <p style="text-align: center;">Roberts（左算子）</p>
 
-![image11](https://i-blog.csdnimg.cn/blog_migrate/ba80732e0ff5d1ea448f0c00686f0515.jpeg)
+![image11](http://i-blog.csdnimg.cn/blog_migrate/ba80732e0ff5d1ea448f0c00686f0515.jpeg)
 
 <p style="text-align: center;">Roberts（右算子）</p>
 
@@ -127,20 +127,20 @@ When calculating the `gradient of the image` (the intensity of change between pi
 
 通过在原始图像上应用Sobel算子，可以增强图像中的水平和垂直边缘。这种方法比拉普拉斯算子锐化更平滑。卷积核如下：
 
-![image12](https://i-blog.csdnimg.cn/blog_migrate/cb2a1aa568ed3e4125d9cbeadc0d4ec4.jpeg)
+![image12](http://i-blog.csdnimg.cn/blog_migrate/cb2a1aa568ed3e4125d9cbeadc0d4ec4.jpeg)
 
 <p style="text-align: center;">Sobel算子</p>
  
-![image13](https://i-blog.csdnimg.cn/blog_migrate/f5ef0ca00539f65ad0ee250728820d0a.jpeg)
+![image13](http://i-blog.csdnimg.cn/blog_migrate/f5ef0ca00539f65ad0ee250728820d0a.jpeg)
 
 <p style="text-align: center;">原图</p>
 
-![image14](https://i-blog.csdnimg.cn/blog_migrate/1138d3a9db801897b4c01e2795598376.jpeg)
+![image14](http://i-blog.csdnimg.cn/blog_migrate/1138d3a9db801897b4c01e2795598376.jpeg)
 
 
 <p style="text-align: center;">Sobel（左算子）</p>
 
-![image15](https://i-blog.csdnimg.cn/blog_migrate/097ce9b98c5572458d7b73851bc2d7f0.jpeg)
+![image15](http://i-blog.csdnimg.cn/blog_migrate/097ce9b98c5572458d7b73851bc2d7f0.jpeg)
 
 
 <p style="text-align: center;">Sobel（右算子）</p>
@@ -152,20 +152,20 @@ When calculating the `gradient of the image` (the intensity of change between pi
 Prewitt算法和sobel算法类似，只是卷积核的权重值不同。Prewitt算法的卷积核模板对于周围像素的中间位置像素权重与两侧权重相同，这使得周围3临近的像素对于当前像素的影响相同。卷积核如下：
 
 
-![image16](https://i-blog.csdnimg.cn/blog_migrate/c849e67e4c5972f8b733ab65f551b936.jpeg)
+![image16](http://i-blog.csdnimg.cn/blog_migrate/c849e67e4c5972f8b733ab65f551b936.jpeg)
 
 <p style="text-align: center;">Prewitt算子</p>
 
-![image17](https://i-blog.csdnimg.cn/blog_migrate/f5ef0ca00539f65ad0ee250728820d0a.jpeg)
+![image17](http://i-blog.csdnimg.cn/blog_migrate/f5ef0ca00539f65ad0ee250728820d0a.jpeg)
 
 <p style="text-align: center;">原图</p>
 
-![image18](https://i-blog.csdnimg.cn/blog_migrate/6f70d65dd9bfee3bd6d5929273ad28cd.jpeg)
+![image18](http://i-blog.csdnimg.cn/blog_migrate/6f70d65dd9bfee3bd6d5929273ad28cd.jpeg)
 
 
 <p style="text-align: center;">Prewitt（左算子）</p>
 
-![image19](https://i-blog.csdnimg.cn/blog_migrate/434686ca12471c5a940172110b2637e3.jpeg)
+![image19](http://i-blog.csdnimg.cn/blog_migrate/434686ca12471c5a940172110b2637e3.jpeg)
 
 
 <p style="text-align: center;">Prewitt（算子）</p>
@@ -188,18 +188,18 @@ Canny算子锐化是一种多阶段边缘检测算法，可在保留更多真实
 
 Unsharp Masking锐化也是一种常用的图像增强技术，它通过对原始图像进行高斯模糊并将其减去原始图像，然后对结果应用增强锐化滤波器，以增强图像的细节和边缘。
 最初应用于暗房摄影。它的名字来源，即该技术使用模糊的或“不清晰的”负片图像来创建蒙版原始图像的。然后将反锐化蒙版与原始正像结合，创建一个比原始图像更不模糊的图像。生成的图像虽然更清晰，但对图像主体的表示可能不太准确。
-卷积核为：<img src="https://i-blog.csdnimg.cn/blog_migrate/88206a02276ecadde1a1bf2dbd91c1d8.jpeg" width = 15%/>。其计算过程如下：
+卷积核为：<img src="http://i-blog.csdnimg.cn/blog_migrate/88206a02276ecadde1a1bf2dbd91c1d8.jpeg" width = 15%/>。其计算过程如下：
 
 
-![image20](https://i-blog.csdnimg.cn/blog_migrate/28c181bc02b85ab1c1c84470502e0a6c.jpeg)
+![image20](http://i-blog.csdnimg.cn/blog_migrate/28c181bc02b85ab1c1c84470502e0a6c.jpeg)
 
 属于高斯——拉普拉斯算子的一种，其效果如下：
 
-![image21](https://i-blog.csdnimg.cn/blog_migrate/f5ef0ca00539f65ad0ee250728820d0a.jpeg)
+![image21](http://i-blog.csdnimg.cn/blog_migrate/f5ef0ca00539f65ad0ee250728820d0a.jpeg)
 
 <p style="text-align: center;">原图</p>
 
-![image22](https://i-blog.csdnimg.cn/blog_migrate/c3b4a070634f00a723aa07f1371d307e.jpeg)
+![image22](http://i-blog.csdnimg.cn/blog_migrate/c3b4a070634f00a723aa07f1371d307e.jpeg)
 
 
 <p style="text-align: center;">Unsharp Masking（LoG算子）</p>
