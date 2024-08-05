@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "ViTMatting"
+title:      "我的人像分割模型-ViTMatting by CS"
 subtitle:   " alpha matting by Vision Transformer"
 date:       2024-07-30 18:00:00
 author:     "CS"

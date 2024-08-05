@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "Tokenizer"
+title:      "LLM的常见分词器-Tokenizer"
 subtitle:   "常用Tokenizer"
 date:       2024-08-02 18:36:00
 author:     "CS"
@@ -14,18 +14,20 @@ tags:
 Tokenizer
 --------------
 
-huggingface 上的 Tokenizer 演示 Demo : [Tokenizer playground](https://huggingface.co/spaces/Xenova/the-tokenizer-playground)
+可以先试玩 huggingface 上的 Tokenizer 演示 Demo : [Tokenizer playground](https://huggingface.co/spaces/Xenova/the-tokenizer-playground)
 
 > 在nlp领域中tokenizer主要用于文本的预处理，能够将句子级文本转化为词级的文本，然后用于接下来的`词向量`转化，这个过程可以叫他token转化，或者直接叫tokenizer。
 - 是LLM必不可少的一个部分，是语言模型最基础的组件。
 
-1.  根据不同的切分粒度可以把tokenizer分为: 词级（`Word-based`）,字母级（`Character-based`）和**子词级**（`Subword-based`），目前主要流行的方法是**子词级**转化。
+1.  根据不同的切分粒度可以把tokenizer分为: **词级**（`Word-based`）,**字母级**（`Character-based`）和**子词级**（`Subword-based`），目前主要流行的方法是**子词级**转化。
 2.  **subword**的切分包括: `BPE(/BBPE)`, `WordPiece` 和 `Unigram`三种分词模型。其中WordPiece可以认为是一种特殊的BPE。
 3.  完整的分词流程包括：文本归一化，预切分，基于分词模型的切分，后处理。
 4.  SentencePiece是一个分词工具，内置BEP等多种分词方法，基于Unicode编码并且将空格视为特殊的token。是当前大模型的主流分词方案。
 
 
 基本的流程如图所示，包括归一化，预分词，基于分词模型的切分，后处理4个步骤。
+
+![Tokenizer](http://i-blog.csdnimg.cn/blog_migrate/e4f1b15c311418f1f81532c10695b0f6.png)
 
 #### **1. 归一化**
 
@@ -146,7 +148,7 @@ Byte-Pair Encoding(BPE)是最广泛采用的subword分词器。
 WordPiece可以看作是BPE的变种。通过概率来保留词表中的词。
 与BPE相比，WordPiece不会选择最频繁的符号对，而是会选择一种将训练数据添加到词汇表中的可能性最大化的符号对。参考[WordPiece](https://blog.csdn.net/weixin_42167712/article/details/110727139)
 
-#### 3.
+#### 3.Unigram
 
 通过删除某一个对整体词表完整性影响小的组合，获取目标大小的词表。与BPE或WordPiece相比，Unigram将其基本词汇表初始化为大量符号，并逐步修整每个符号以获得较小的词汇表。 基本词汇可以是所有预先分词后的单词和最常见的子字符串。 Unigram不能直接用于Transformer中的任何模型，但可以与SentencePiece结合使用。
 .
