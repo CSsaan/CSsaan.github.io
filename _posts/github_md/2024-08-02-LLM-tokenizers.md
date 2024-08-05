@@ -27,7 +27,7 @@ Tokenizer
 
 基本的流程如图所示，包括归一化，预分词，基于分词模型的切分，后处理4个步骤。
 
-![Tokenizer](http://i-blog.csdnimg.cn/blog_migrate/e4f1b15c311418f1f81532c10695b0f6.png)
+![Tokenizer](https://i-blog.csdnimg.cn/blog_migrate/e4f1b15c311418f1f81532c10695b0f6.png)
 
 #### **1. 归一化**
 
@@ -59,17 +59,17 @@ pre-tokenize:
 GPT2也是基于空格和标签，但是空格会保留成特殊字符“Ġ”。 
 T5则只基于空格进行切分，标点不会切分。并且空格会保留成特殊字符"▁"，并且句子开头也会添加特殊字符"▁"。
 
-HuggingFace tokenizer的实现： https://huggingface.co/docs/tokenizers/api/pre-tokenizers
+HuggingFace tokenizer的实现： [https://huggingface.co/docs/tokenizers/api/pre-tokenizers](https://huggingface.co/docs/tokenizers/api/pre-tokenizers)
 
 #### **3. 基于分词模型的切分**
 
 这里指的就是不同分词模型具体的切分方式。分词模型包括：BPE，WordPiece 和 Unigram 三种分词模型。
 
-HuggingFace tokenizer的实现： https://huggingface.co/docs/tokenizers/api/models
+HuggingFace tokenizer的实现： [https://huggingface.co/docs/tokenizers/api/models](https://huggingface.co/docs/tokenizers/api/models)
 
 #### **4. 后处理**
 
-后处理阶段会包括一些特殊的分词逻辑，例如添加sepcial token：\[CLS\],\[SEP\]等。 HuggingFace tokenizer的实现： https://huggingface.co/docs/tokenizers/api/post-processors
+后处理阶段会包括一些特殊的分词逻辑，例如添加sepcial token：\[CLS\], \[SEP\]等。 HuggingFace tokenizer的实现： [https://huggingface.co/docs/tokenizers/api/post-processors](https://huggingface.co/docs/tokenizers/api/post-processors)
 
 
 ### 三种不同分词粒度的Tokenizer
@@ -141,7 +141,7 @@ Byte-Pair Encoding(BPE)是最广泛采用的subword分词器。
 *   词表规模较大（中文等Unicode编码也被视为基本字符），解码效率较低
 
 改进Byte-level BPE（BBPE）的方法是:
-*   将字节视为基本Token
+*   将**字节**视为基本Token
 *   两个字节合并即为Unicode编码(中文等)
 
 #### 2.WordPiece
