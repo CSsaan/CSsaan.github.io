@@ -4,6 +4,10 @@ Hello everyone, I am CS (Chen Shuai), an algorithm engineer. I am passionate abo
 
 I am enthusiastic about the open source community, sharing my research results and code to promote the exchange and advancement of technology. Here are some of the open source projects I have participated in:
 
+- **Android & windows Aplication**
+  - [Android Camera Special Effect by CS](https://github.com/CSsaan/Camera-Special-Effect-Face-Reshape):Android beauty camera with face slimming, big eyes, and teeth whitening. Implemented using OpenCV + MNN + NCNN + GLM + OpenGLES3.0.
+  - [Matting Tool by CS](https://blog.csdn.net/sCs12321/article/details/124331491)：Deep learning-based portrait segmentation method.
+  - [Interpolation Tool by CS](https://blog.csdn.net/sCs12321/article/details/124550893)：Deep learning-based image interpolation method.
 - **Computer Vision**
   - [Deep Learning of Machine Vision](https://github.com/CSsaan/Deep-learning-of-machine-vision): Exploring the application of deep learning in the field of computer vision.
   - [Vision-Trasformers Matting](https://github.com/CSsaan/EMA-ViTMatting#ema-vitmatting): Image matting technology based on Transformer.
