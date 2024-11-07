@@ -25,6 +25,7 @@
 - **LLM**
   - [Lover LLaMA](https://gitee.com/cehs/lover_llama)：LLaMA的恋爱对话模型，包括数据集、微调、量化、合并、api部署等。
 - **OpenGL/Shader**
+  - [7 Sharpen Methods](https://blog.csdn.net/sCs12321/article/details/129459772): 7种锐化方法介绍与C++、Python、shader、GLSL实现。
   - [OpenGL CMake by CS](https://github.com/CSsaan/OpenGL_CMake_CS)：一键使用CMake构建OpenGL项目，结合ImGui。
   - [OpenGL with QT](https://github.com/CSsaan/HelloOpenGL)：使用Qt来构建OpenGL项目。
   - [OpenGL Colors Filters](https://github.com/CSsaan/OpenGL-colors-filters)：OpenGL颜色滤镜。

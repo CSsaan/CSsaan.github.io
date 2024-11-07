@@ -18,6 +18,7 @@ I am enthusiastic about the open source community, sharing my research results a
 - **LLM**
   - [Lover LLaMA](https://gitee.com/cehs/lover_llama): LLaMA's love dialogue model, including dataset, fine-tuning, quantization, merging, API deployment, etc.
 - **OpenGL/Shader**
+  - [7 Sharpen Methods](https://blog.csdn.net/sCs12321/article/details/129459772): Introduction to 7 Sharpening Methods and their Implementation in C++, Python, Shader, and GLSL.
   - [OpenGL CMake by CS](https://github.com/CSsaan/OpenGL_CMake_CS): One-click use of CMake to build OpenGL projects, combined with ImGui.
   - [OpenGL with QT](https://github.com/CSsaan/HelloOpenGL): Using Qt to build OpenGL projects.
   - [OpenGL Colors Filters](https://github.com/CSsaan/OpenGL-colors-filters): OpenGL color filters.
