@@ -1,0 +1,276 @@
+<!DOCTYPE html><html><head>
+      <title>compare</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\陈帅\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.15\crossnote\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<h1 id="人像模式与ai虚化效果">人像模式与AI虚化效果 </h1>
+<h2 id="1-引言">1. 引言 </h2>
+<p>手机的<strong>人像模式</strong>就是模仿传统摄影大光圈浅景深的效果。</p>
+<p><strong>虚化散景</strong>是在一个专门的模式下呈现的，通常是人像或光圈模式。人像摄影通常将拍摄人物对象置于一个模糊的焦外背景的前面，以凸显人物。</p>
+<p>在<strong>物理定律</strong>的基础上，使用大光圈镜头与大画幅图像传感器的相机可以轻松实现背景虚化。<br>
+景深的深度与光圈大小呈反比关系，<u>光圈大的镜头一般都贵；此外，由于其较小的图像传感器，难以有效模糊背景，导致拍摄对象和背景的清晰度相近。</u></p>
+<p>智能手机制造商采用了多种方法和技术来实现计算散景效果，包括焦点堆叠、双摄像头（立体视觉）、双像素技术，以及专用的景深传感器。</p>
+<p>本文将对比几款主流手机产品的人像模式效果。</p>
+<h3 id="11-目的">1.1 目的 </h3>
+<ul>
+<li>对比几款主流产品，了解它们在人像模式或AI虚化功能上的表现和差异。</li>
+<li>从技术角度对比几款主流产品，了解它们在这个功能上的优势和劣势。</li>
+<li>从用户体验角度对比几款主流产品。</li>
+</ul>
+<hr>
+<h2 id="2-技术与效果分析">2. 技术与效果分析 </h2>
+<p>通常将该任务分为: <strong>深度估计</strong>、<strong>语义分割</strong>、<strong>经典渲染</strong>。</p>
+<p><strong>手机深度传感器：</strong></p>
+<ul>
+<li>iPhone 12 Pro起开始搭载激光雷达（LiDAR/ToF）</li>
+<li><a href="https://zh.wikipedia.org/wiki/Dual_Pixel">DP</a>(Dual Pixel)、<a href="https://zhihuhuhu.blogspot.com/2024/04/Quad-Pixel-Tech-Lookback-Outlook.html">QP</a>(Quad Pixel, 或称Quad Bayer、4Cell) （与传感器类型有关）</li>
+<li>双目视觉（分辨率更高）</li>
+<li>单目深度估计（AI，人像模式还需人像抠图模型）</li>
+</ul>
+<p><strong>虚化处理类型：</strong></p>
+<ul>
+<li>图像处理：对处理时间要求比较宽松，可以采用更加高精度的算法。</li>
+<li>视频处理：需要在33ms内完成，</li>
+</ul>
+<h3 id="21-虚化方式">2.1 虚化方式 </h3>
+<p>虚化场景：图像虚化、视频虚化。</p>
+<p>虚化方式：基于AI人像抠图的两距离平面虚化；AI深度估计景深虚化（物体与风景虚化）；AI人像抠图+深度估计；端到端的深度学习解决方案。</p>
+<p><strong>AI人像抠图:</strong></p>
+<table>
+  <tbody><tr>
+    <td><img src=".\img\image0.png"></td>
+    <td><img src=".\img\image.png"></td>
+  </tr>
+</tbody></table>
+<p><strong>深度估计:</strong></p>
+<table>
+  <tbody><tr>
+    <td><img src=".\img\image-1.png"></td>
+    <td><img src=".\img\image-2.png"></td>
+  </tr>
+</tbody></table>
+<h3 id="22-技术特点">2.2 技术特点 </h3>
+<ul>
+<li><strong>实时处理</strong>：是否支持实时处理，或者实时预览。
+<ul>
+<li>在大部分手机中支持实时预览，但精度、效果、帧间连续性差。一般拍摄完成后会进行更加精细化的处理。</li>
+</ul>
+</li>
+<li><strong>主体/背景分割</strong>：精确分离拍摄对象和背景是实现数码单反相机效果的关键。
+<ul>
+<li>但当前设备受到景深图解析度不足的影响，可能导致边缘不清晰和景深估计错误，尤其在拍摄移动场景时更为明显。</li>
+</ul>
+</li>
+<li><strong>模糊渐变平滑度</strong>：模糊强度随景深大小而变化。
+<ul>
+<li>基本人像可能只包含两个距离平面，但大多数的场景都具有更复杂的三维构图，例如多平面图像(MPI, Multi-Plane Image)、深度图等。</li>
+<li>由于我们拍摄的时候场景并不是只有主体和一个远处的背景，而是在主体前后有不同的前景和背景，所有单纯的人像分割是不能满足的。</li>
+<li>把不同物体的地方按照与焦点距离进行恰到好处地“模糊”，才能得到近似于相机光学虚化的效果。因此，平滑的模糊渐变对于生成近乎数码单反相机的散景效果至关重要。</li>
+</ul>
+</li>
+<li><strong>散景光点形状</strong>：单反中一般是非圆形，与单反采用的镜头的机械结构形状有关。
+<ul>
+<li>一般大光圈时接近为圆形。</li>
+<li>大部分手机中默认模拟的光圈形状为圆形，一些后期处理软件中也可以选择为其他形状。</li>
+</ul>
+</li>
+<li><strong>取景fov/范围</strong>：一般手机人像模式是使用相机的长焦镜头，它会获得更近的取景。使用长焦镜头的原因：
+<ul>
+<li>这是因为要用两个镜头的画面进行比较来获取位置差异得到距离关系，而长焦的画面范围约是主摄的一半，如果在主摄拍的时候用长焦来计算位置差异的话，只有中间一块有数据没法处理四周的部分。</li>
+<li>镜头焦距越长景深越短，就算光圈不大也可以获得不错的浅景深，便宜大碗，所以大家都选择用长镜头拍人像。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="3-效果对比">3. 效果对比 </h2>
+<ul>
+<li><em>标准：相机恢复默认，打开人像模式，拍摄直出。</em></li>
+</ul>
+<p><strong>iPhone 16 Pro Max、三星 Galaxy S24 Ultra、华为 Pura 70 Ultra</strong></p>
+<table>
+  <tbody><tr>
+    <td><img src=".\img\image-4.png"></td>
+    <td><img src=".\img\image-5.png"></td>
+    <td><img src=".\img\image-6.png"></td>
+  </tr>
+</tbody></table>
+<blockquote>
+<p>iPhone 16 Pro Max耳环周围有深度伪像(左), 三星 Galaxy S24 Ultra 耳环周围有深度伪像(中), 华为 Pura 70 Ultra出色的主体分割、大光点模拟(右)</p>
+</blockquote>
+<p><strong>Oppo Find X7 Ultra、iPhone 15 Pro Max、华为 Mate 60 Pro+</strong></p>
+<table>
+  <tbody><tr>
+    <td><img src=".\img\image-7.png"></td>
+    <td><img src=".\img\image-8.png"></td>
+    <td><img src=".\img\image-9.png"></td>
+  </tr>
+  <tr>
+    <td><img src=".\img\image-10.png"></td>
+    <td><img src=".\img\image-11.png"></td>
+    <td><img src=".\img\image-12.png"></td>
+  </tr>
+</tbody></table>
+<blockquote>
+<p>Oppo Find X7 Ultra被摄体隔离准确，细节保留良好(左), iPhone 15 Pro Max被摄体的细微发丝保留不佳，散景形状较好(中), 华为 Mate 60 Pro+细节略有不准确,散景形状失真(右)</p>
+</blockquote>
+<p><strong>小米 14 Ultra、华为 Pura 70 Ultra</strong></p>
+<table>
+  <tbody><tr>
+    <td><img src=".\img\image-13.png"></td>
+    <td><img src=".\img\image-14.png"></td>
+  </tr>
+  <tr>
+    <td><img src=".\img\image-15.png"></td>
+    <td><img src=".\img\image-16.png"></td>
+  </tr>
+</tbody></table>
+<blockquote>
+<p>小米 14 Ultra尖峰背景上的深度估计误差(左), 华为 Pura 70 Ultra 较好的深度估计(右)</p>
+</blockquote>
+<p><strong>Vivo X100 Pro、Vivo X90 Pro、iPhone 15 Pro Max</strong></p>
+<table>
+  <tbody><tr>
+    <td><img src=".\img\image-17.png"></td>
+    <td><img src=".\img\image-18.png"></td>
+    <td><img src=".\img\image-19.png"></td>
+  </tr>
+</tbody></table>
+<blockquote>
+<p>Vivo X100 Pro深度估计较准确，模糊梯度较好，散景光斑形状为圆形(左), Vivo X90 Pro模糊梯度较差，散景光斑形状为圆形(中), iPhone 15 Pro Max深度估计较准确，模糊梯度较好，散景光斑形状较小(右)</p>
+</blockquote>
+<p><strong>荣耀 Magic4 至臻版、华为 P50 Pro、小米 11 Ultra</strong></p>
+<table>
+  <tbody><tr>
+    <td><img src=".\img\image-20.png"></td>
+    <td><img src=".\img\image-21.png"></td>
+    <td><img src=".\img\image-22.png"></td>
+  </tr>
+</tbody></table>
+<blockquote>
+<p>荣耀 Magic4 至臻版眼镜框较准确，模糊梯度较弱(左), 华为 P50 Pro眼镜框较差，模糊梯度几乎无(中), 小米 11 Ultra眼镜框较差，模糊梯度较好(右)</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>功能/产品</th>
+<th>Apple iPhone 15 ProMax</th>
+<th>小米 14 pro</th>
+<th>华为 Mate 60 Pro+</th>
+<th>PS(Depth Blur)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>人像模式</strong></td>
+<td>单目即可,双目时效果更好</td>
+<td>只能双目(后置镜头)</td>
+<td>多镜头 + AI算法</td>
+<td>AI深度估计 + focus object(保留精准的人物边缘细节)</td>
+</tr>
+<tr>
+<td><strong>实时处理</strong></td>
+<td>支持</td>
+<td>支持</td>
+<td>支持</td>
+<td>(×)需联网进行云端模型推理</td>
+</tr>
+<tr>
+<td><strong>主体背景分割</strong></td>
+<td>人像+物体</td>
+<td>人像+物体</td>
+<td>人像+物体</td>
+<td>人像+物体</td>
+</tr>
+<tr>
+<td><strong>模糊渐变平滑度</strong></td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td><strong>散景形状</strong></td>
+<td>圆形</td>
+<td>圆形</td>
+<td>圆形较为不明显</td>
+<td>圆形</td>
+</tr>
+<tr>
+<td><strong>距离与模糊程度</strong></td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+</tr>
+</tbody>
+</table>
+<table>
+  <tbody><tr>
+    <td><img src=".\img\image-3.png"></td>
+  </tr>
+  <tr>
+    <td class="text-center">距离与模糊程度关系曲线</td>
+</tr></tbody></table>
+<table>
+  <tbody><tr>
+    <td><img src=".\img\bokehd.png"></td>
+    <td><img src=".\img\bokeh.gif"></td>
+  </tr>
+  <tr>
+    <td class="text-center">深度图</td>
+    <td class="text-center">虚化模拟(动态对焦距离，固定对焦范围)</td>
+  </tr>
+</tbody></table>
+<hr>
+<h2 id="4-结论">4. 结论 </h2>
+<p>在人像模式和AI虚化功能方面，各家目前针对图像虚化的效果均良好，各个产品都有其独特的技术优势。</p>
+<ul>
+<li>
+<p>目前手机人像模式主要是针对于照片的优化，在预览中可生效（效果较差，分割伪像较多且存在闪动），在拍摄后，会进一步精细化处理，效果会更好一些。<br>
+所以需要考虑视频虚化时的帧间连续性，避免明显的闪动。</p>
+</li>
+<li>
+<p>人像模式中，可以观察到不止人像聚焦，与人像距离相近的物体也会聚焦，可以猜测使用了人像分割与深度图信息。</p>
+</li>
+<li>
+<p>在头发边缘细节处理上有一定的难度，除了前景与背景分割的准确性要求外，发丝、皮肤、衣服边缘细节保留，且模糊处理时与背景混色也需要考虑。</p>
+</li>
+<li>
+<p>聚焦物体的焦平面内要清晰，模糊随着景深不同而不同。自然、真实的虚化散景光点形状也需要考虑。</p>
+</li>
+</ul>
+<h3 id="参考文献">参考文献 </h3>
+<p>[1]. Wolf Hauser, Balthazar Neveu, Jean-Benoit Jourdain, Clément Viard, Frédéric Guichard, "Image quality benchmark of computational bokeh"  in Proc. IS&amp;T Int’l. Symp. on Electronic Imaging: Image Quality and System Performance XV,  2018,  pp 340-1 - 340-10,  &lt;https:// .org/10.2352/ISSN.2470-1173.2018.12.IQSP-340&gt;</p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
