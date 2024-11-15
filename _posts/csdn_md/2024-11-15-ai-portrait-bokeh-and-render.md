@@ -57,16 +57,16 @@ tags:
 **AI人像抠图:**
 <table>
   <tr>
-    <td><img src=".\img\image0.png"/></td>
-    <td><img src=".\img\image.png"/></td>
+    <td><img src="https://github.com/CSsaan/CSsaan.github.io/blob/main/_posts/csdn_md/img/image0.png?raw=true"/></td>
+    <td><img src="https://github.com/CSsaan/CSsaan.github.io/blob/main/_posts/csdn_md/img/image.png?raw=true"/></td>
   </tr>
 </table>
 
 **深度估计:**
 <table>
   <tr>
-    <td><img src=".\img\image-1.png"/></td>
-    <td><img src=".\img\image-2.png"/></td>
+    <td><img src="https://github.com/CSsaan/CSsaan.github.io/blob/main/_posts/csdn_md/img/image-1.png?raw=true"/></td>
+    <td><img src="https://github.com/CSsaan/CSsaan.github.io/blob/main/_posts/csdn_md/img/image-2.png?raw=true"/></td>
   </tr>
 </table>
 
@@ -96,9 +96,9 @@ tags:
 **iPhone 16 Pro Max、三星 Galaxy S24 Ultra、华为 Pura 70 Ultra**
 <table>
   <tr>
-    <td><img src=".\img\image-4.png"/></td>
-    <td><img src=".\img\image-5.png"/></td>
-    <td><img src=".\img\image-6.png"/></td>
+    <td><img src="https://github.com/CSsaan/CSsaan.github.io/blob/main/_posts/csdn_md/img/image-4.png?raw=true"/></td>
+    <td><img src="https://github.com/CSsaan/CSsaan.github.io/blob/main/_posts/csdn_md/img/image-5.png?raw=true"/></td>
+    <td><img src="https://github.com/CSsaan/CSsaan.github.io/blob/main/_posts/csdn_md/img/image-6.png?raw=true"/></td>
   </tr>
 </table>
 
@@ -107,14 +107,14 @@ tags:
 **Oppo Find X7 Ultra、iPhone 15 Pro Max、华为 Mate 60 Pro+**
 <table>
   <tr>
-    <td><img src=".\img\image-7.png"/></td>
-    <td><img src=".\img\image-8.png"/></td>
-    <td><img src=".\img\image-9.png"/></td>
+    <td><img src="https://github.com/CSsaan/CSsaan.github.io/blob/main/_posts/csdn_md/img/image-7.png?raw=true"/></td>
+    <td><img src="https://github.com/CSsaan/CSsaan.github.io/blob/main/_posts/csdn_md/img/image-8.png?raw=true"/></td>
+    <td><img src="https://github.com/CSsaan/CSsaan.github.io/blob/main/_posts/csdn_md/img/image-9.png?raw=true"/></td>
   </tr>
   <tr>
-    <td><img src=".\img\image-10.png"/></td>
-    <td><img src=".\img\image-11.png"/></td>
-    <td><img src=".\img\image-12.png"/></td>
+    <td><img src="https://github.com/CSsaan/CSsaan.github.io/blob/main/_posts/csdn_md/img/image-10.png?raw=true"/></td>
+    <td><img src="https://github.com/CSsaan/CSsaan.github.io/blob/main/_posts/csdn_md/img/image-11.png?raw=true"/></td>
+    <td><img src="https://github.com/CSsaan/CSsaan.github.io/blob/main/_posts/csdn_md/img/image-12.png?raw=true"/></td>
   </tr>
 </table>
 
@@ -123,12 +123,12 @@ tags:
 **小米 14 Ultra、华为 Pura 70 Ultra**
 <table>
   <tr>
-    <td><img src=".\img\image-13.png"/></td>
-    <td><img src=".\img\image-14.png"/></td>
+    <td><img src="https://github.com/CSsaan/CSsaan.github.io/blob/main/_posts/csdn_md/img/image-13.png?raw=true"/></td>
+    <td><img src="https://github.com/CSsaan/CSsaan.github.io/blob/main/_posts/csdn_md/img/image-14.png?raw=true"/></td>
   </tr>
   <tr>
-    <td><img src=".\img\image-15.png"/></td>
-    <td><img src=".\img\image-16.png"/></td>
+    <td><img src="https://github.com/CSsaan/CSsaan.github.io/blob/main/_posts/csdn_md/img/image-15.png?raw=true"/></td>
+    <td><img src="https://github.com/CSsaan/CSsaan.github.io/blob/main/_posts/csdn_md/img/image-16.png?raw=true"/></td>
   </tr>
 </table>
 
@@ -137,9 +137,9 @@ tags:
 **Vivo X100 Pro、Vivo X90 Pro、iPhone 15 Pro Max**
 <table>
   <tr>
-    <td><img src=".\img\image-17.png"/></td>
-    <td><img src=".\img\image-18.png"/></td>
-    <td><img src=".\img\image-19.png"/></td>
+    <td><img src="https://github.com/CSsaan/CSsaan.github.io/blob/main/_posts/csdn_md/img/image-17.png?raw=true"/></td>
+    <td><img src="https://github.com/CSsaan/CSsaan.github.io/blob/main/_posts/csdn_md/img/image-18.png?raw=true"/></td>
+    <td><img src="https://github.com/CSsaan/CSsaan.github.io/blob/main/_posts/csdn_md/img/image-19.png?raw=true"/></td>
   </tr>
 </table>
 
@@ -148,9 +148,9 @@ tags:
 **荣耀 Magic4 至臻版、华为 P50 Pro、小米 11 Ultra**
 <table>
   <tr>
-    <td><img src=".\img\image-20.png"/></td>
-    <td><img src=".\img\image-21.png"/></td>
-    <td><img src=".\img\image-22.png"/></td>
+    <td><img src="https://github.com/CSsaan/CSsaan.github.io/blob/main/_posts/csdn_md/img/image-20.png?raw=true"/></td>
+    <td><img src="https://github.com/CSsaan/CSsaan.github.io/blob/main/_posts/csdn_md/img/image-21.png?raw=true"/></td>
+    <td><img src="https://github.com/CSsaan/CSsaan.github.io/blob/main/_posts/csdn_md/img/image-22.png?raw=true"/></td>
   </tr>
 </table>
 
@@ -167,7 +167,7 @@ tags:
 
 <table>
   <tr>
-    <td><img src=".\img\image-3.png"/></td>
+    <td><img src="https://github.com/CSsaan/CSsaan.github.io/blob/main/_posts/csdn_md/img/image-3.png?raw=true"/></td>
   </tr>
   <tr>
     <td class="text-center">距离与模糊程度关系曲线</td>
@@ -175,8 +175,8 @@ tags:
 
 <table>
   <tr>
-    <td><img src=".\img\bokehd.png"/></td>
-    <td><img src=".\img\bokeh.gif"/></td>
+    <td><img src="https://github.com/CSsaan/CSsaan.github.io/blob/main/_posts/csdn_md/img/bokehd.png?raw=true"/></td>
+    <td><img src="https://github.com/CSsaan/CSsaan.github.io/blob/main/_posts/csdn_md/img/bokeh.gif?raw=true"/></td>
   </tr>
   <tr>
     <td class="text-center">深度图</td>
