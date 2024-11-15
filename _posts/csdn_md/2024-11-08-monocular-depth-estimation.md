@@ -36,4 +36,4 @@ https://github.com/Joshuat38/D-Net
 #### 3.AdaMPI
 https://github.com/yxuhan/AdaMPI
 
-[虚化](http://brucezhaor.github.io/_posts/csdn_md/bokeh.html)
+[虚化](./2024-11-15-ai-portrait-bokeh-and-render.md)
