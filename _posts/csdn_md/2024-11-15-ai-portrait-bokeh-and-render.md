@@ -209,6 +209,7 @@ tags:
 </table>
 
 其背后的光学原理，则是透镜成像。薄透镜成像公式如下：
+
 $$
 \begin{aligned}
 \frac{1}{o} + \frac{1}{i} &= \frac{1}{f} \\
@@ -230,6 +231,7 @@ $$
 - aperture 光圈F值 (定义为 镜片焦距/镜片直径，即为F=f/lensDiam，本例取值范围:1.4-32.0)
 
 对应的焦距计算公式为：
+
 $$
 \begin{aligned}
 f &= \frac{1}{\frac{1}{focalLength} + \frac{1}{focusDistance}} \\
@@ -237,6 +239,7 @@ f &= \frac{1}{\frac{1}{focalLength} + \frac{1}{focusDistance}} \\
 $$
 
 镜片直径：
+
 $$
 \begin{aligned}
 lensDiam &= \frac{f}{aperture} \\
@@ -245,7 +248,7 @@ $$
 
 根据物距，计算弥散圆直径(CoC):
 
-``` C
+``` C++
 输入参数:
     o   // 物距（单位：mm）
 输出:
@@ -314,7 +317,6 @@ if __name__ == "__main__":
 #iChannel0 "file://D:/OpenGlProject/ShaderToys/pic/depth/1118.png"  // 原图
 #iChannel1 "file://D:/OpenGlProject/ShaderToys/pic/depth/1118d.png" // 深度图
 
-
 const int focalLenth = 60;        // 胶片到镜片的距离, 0-300mm (default: 50mm).
 const float aperture = 4.0;       // 光圈F值 (default: 6.0).
 
@@ -330,6 +332,7 @@ float getDepth(float x){
     else
         return 1.46*x-292.3;
 }
+
 // 请你根据深度图纹理，修改为准确的深度图解析函数, 单位为m
 float getDistance(sampler2D inTex, vec2 uv)
 {
@@ -343,8 +346,6 @@ float distance_to_interval(float x, float a, float b) {
         return min(abs(x - a), abs(x - b));
     }
 }
-
-
 
 float calculate_coc(float depth, float focusDistance)
 {
@@ -432,7 +433,9 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
 
 ***文章中可能存在一些错误，欢迎大家补充和讨论。或者可以联系我，一起讨论。***
 
+
 ---
+
 
 ### 参考文献
 
