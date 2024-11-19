@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "人像模式与AI虚化效果渲染"
+title:      "人像模式与AI虚化效果原理与实现(OpenGL、shader GLSL)"
 subtitle:   "主要侧重于虚化效果和从测试角度的一些关注点和注意事项，分别对比了目前最新几款手机的AI虚化效果"
 date:       2024-11-15 16:11:00
 author:     "CS"
@@ -10,6 +10,8 @@ tags:
     - Python
     - Portrait Bokeh Render
 ---
+
+我的主页：[https://www.csblog.site/about/](https://www.csblog.site/about/)
 
 ## 1. 引言
 
@@ -22,13 +24,15 @@ tags:
 
 智能手机制造商采用了多种方法和技术来实现计算散景效果，包括焦点堆叠、双摄像头（立体视觉）、双像素技术，以及专用的景深传感器。
 
-本文将对比几款主流手机产品的人像模式效果。
+本文将对比几款主流手机产品的人像模式效果，并尝试使用OpenGL/GLSL来实现虚化渲染。
 
 ### 1.1 目的
 
 - 对比几款主流产品，了解它们在人像模式或AI虚化功能上的表现和差异。
 - 从技术角度对比几款主流产品，了解它们在这个功能上的优势和劣势。
 - 从用户体验角度对比几款主流产品。
+- 分析虚化效果的原理。
+- 并尝试使用OpenGL/GLSL来实现虚化渲染。
 
 ---
 
@@ -186,7 +190,234 @@ tags:
 
 ---
 
-## 4. 结论
+## 4. 理论分析
+
+### 4.1 景深（DepthOfField，DOF）
+
+数码相机的景深受到以下因素的影响：
+
+光圈大小：光圈的大小决定了通过镜头进入相机的光线量。较大的光圈（小 F 值）会减小景深，使得焦点范围更窄，背景更模糊；而较小的光圈（大 F 值）会增大景深，使得更多区域保持清晰。
+
+焦距：焦距是指镜头到成像平面的距离，不同焦距的镜头会影响景深的感知。长焦距镜头（如望远镜头）会产生较浅的景深，而短焦距镜头（如广角镜头）会产生较深的景深。
+
+拍摄距离：拍摄距离是指镜头到拍摄对象的距离，较近的拍摄距离会产生较浅的景深，而较远的拍摄距禿会产生较深的景深。
+
+<table>
+  <tr>
+    <td><img src="https://github.com/CSsaan/CSsaan.github.io/blob/main/_posts/csdn_md/img/ThinLens.png?raw=true"/></td>
+  </tr>
+</table>
+
+其背后的光学原理，则是透镜成像。薄透镜成像公式如下：
+$$
+\begin{aligned}
+\frac{1}{o} + \frac{1}{i} &= \frac{1}{f} \\
+\end{aligned}
+$$
+
+其中，$O$ 为透镜距离（Object Distance），$I$ 为成像距离（Image Distance），$f$ 为焦距（Focal Length）。
+
+当物体通过凸透镜形成的像正好在胶片（或传感器）的位置时，光线会聚焦在胶片上，形成一个清晰的成像。这种情况下，光线经过透镜会准确地汇聚在胶片上，使得成像清晰。反之，如果物体形成的像与胶片的位置有一定的差距，光线在透镜中会发生散射，导致成像模糊。差距越大，光线汇聚的位置与胶片位置之间的偏差就越大，成像就会越模糊。
+
+### 4.2 散景图（圆形模糊）
+
+要计算失焦主体在图像平面上的混淆圆的直径，一种方法是首先计算物体平面中虚像中模糊圆的直径，这是简单地使用相似的三角形完成的，然后乘以系统的放大倍率，这是在[镜头方程](https://en.wikipedia.org/wiki/Circle_of_confusion)的帮助下计算的。
+
+### 4.3 相关计算
+
+- focalLength 胶片到镜片的距离 (胶距，单位mm，本例取值范围:1-300)
+- focusDistance 对焦距离 (物距，本例取值范围:大于0.5m)
+- aperture 光圈F值 (定义为 镜片焦距/镜片直径，即为F=f/lensDiam，本例取值范围:1.4-32.0)
+
+对应的焦距计算公式为：
+$$
+\begin{aligned}
+f &= \frac{1}{\frac{1}{focalLength} + \frac{1}{focusDistance}} \\
+\end{aligned}
+$$
+
+镜片直径：
+$$
+\begin{aligned}
+lensDiam &= \frac{f}{aperture} \\
+\end{aligned}
+$$
+
+根据物距，计算弥散圆直径(CoC):
+
+``` C
+输入参数:
+    o   // 物距（单位：mm）
+输出:
+    i = 1 / (1/f - 1/o);   // 根据焦距、物距计算像距
+    CoC = abs(i - focalLength) * lensDiam / focalLength ;
+    即等同：
+    CoC = abs(i - focalLength) * f /(aperture * focalLength) ;
+```
+
+对应Python代码：
+
+``` Python
+def calculate_coc(depth, focalLenth=50, aperture=6.0, focusDistance=10):
+  """
+  Calculate the Circle of Confusion (CoC) based on depth, focal length, aperture, and focus distance.
+
+  Parameters:
+  - depth: 物距, 单位m.
+  - focalLength: 胶片到镜片的距离, 0-300mm (default: 50mm).
+  - aperture: 光圈F值 (default: 6.0).
+  - focusDistance: 对焦距离, 单位m (default: 10m).
+
+  Returns:
+  - The calculated Circle of Confusion (CoC) value.
+  """
+  if(depth < focusDistance): # 为了近景模糊变化更平滑，做了调整，与远景变化趋势一致
+        depth = focusDistance+(focusDistance-depth)
+  o = 1000 * depth - focalLenth # object_distance_mm
+  f = 1 / (0.001 / focusDistance + 1 / focalLenth)
+  i = 1 / (1 / f - 1 / o) # image_distance 
+  ff = f / (aperture * focalLenth)
+  coc = abs(i - focalLenth) * ff
+  return min(max(coc, 0), 3)
+
+if __name__ == "__main__":
+  import numpy as np
+  import matplotlib.pyplot as plt
+  o_values = np.linspace(0.5, 100, 100)  # 定义 物距o 的取值范围 0.5-100m
+  coc_values = [calculate_coc(o) for o in o_values]  # 计算对应 物距o 值下的 CoC
+  # 绘图
+  plt.plot(o_values, coc_values)
+  plt.xlabel('Object Distance (m)')
+  plt.ylabel('Circle of Confusion (mm)')
+  plt.title('Circle of Confusion vs. Object Distance')
+  plt.grid(True)
+  plt.ylim(0, 1)
+  plt.show()
+```
+
+> 原曲线中，在对焦物体与靠近镜头一面的模糊变化太快了，而再深度估计中精度较差，如果变化太快会露馅。所以采用与对焦物体远端的变化趋势对称。（注意，因为本人时间有限，简单对称处理还是不太好，应该只是稍微平缓一些）
+
+<table>
+  <tr>
+    <td><img src="https://github.com/CSsaan/CSsaan.github.io/blob/main/_posts/csdn_md/img/Figure_1.png?raw=true"/></td>
+    <td><img src="https://github.com/CSsaan/CSsaan.github.io/blob/main/_posts/csdn_md/img/Figure_2.png?raw=true"/></td>
+  </tr>
+  <tr>
+    <td class="text-center">原曲线</td>
+    <td class="text-center">调整后，左侧与右侧对称</td>
+  </tr>
+</table>
+
+### 4.4 GLSL/OpenGL代码
+
+``` glsl
+#iChannel0 "file://D:/OpenGlProject/ShaderToys/pic/depth/1118.png"  // 原图
+#iChannel1 "file://D:/OpenGlProject/ShaderToys/pic/depth/1118d.png" // 深度图
+
+
+const int focalLenth = 60;        // 胶片到镜片的距离, 0-300mm (default: 50mm).
+const float aperture = 4.0;       // 光圈F值 (default: 6.0).
+
+#define USE_GAMMA           // 使用gamma校正
+const float gamma = 4.2;    // gamma校正系数
+const float hardness = 0.8; // 0.0-1.0
+const float focusScale = 0.1;
+
+// 我自己的的深度图解析函数
+float getDepth(float x){
+    if(x<=205.0)
+        return 0.03*x+0.85;
+    else
+        return 1.46*x-292.3;
+}
+// 请你根据深度图纹理，修改为准确的深度图解析函数, 单位为m
+float getDistance(sampler2D inTex, vec2 uv)
+{
+  vec3 rgb = texture(inTex, uv).rgb;
+  return getDepth(255.0-255.0*rgb.r);
+}
+float distance_to_interval(float x, float a, float b) {
+    if (x >= a && x <= b) {
+        return 0.0;
+    } else {
+        return min(abs(x - a), abs(x - b));
+    }
+}
+
+
+
+float calculate_coc(float depth, float focusDistance)
+{
+    if(depth < focusDistance)
+        depth = focusDistance+(focusDistance-depth);
+    float o = 1000.0 * depth - float(focalLenth); // object_distance_mm
+    float f = 1.0 / (0.001 / focusDistance + 1.0 / float(focalLenth));
+    float i = 1.0 / (1.0 / f - 1.0 / o); // image_distance 
+    float ff = f / (aperture * float(focalLenth));
+    float coc = abs(i - float(focalLenth)) * ff;
+    return clamp(coc, 0.0, 3.0);
+}
+
+float intensity(vec2 p)
+{
+    return smoothstep(1.0, hardness, distance(p, vec2(0.0)));
+}
+
+vec3 blur(sampler2D tex, float size, int res, vec2 uv, float ratio)
+{
+    float div = 0.0;
+    vec3 accumulate = vec3(0.0);
+    
+    for(int iy = 0; iy < res; iy++)
+    {
+        float y = (float(iy) / float(res))*2.0 - 1.0;
+        for(int ix = 0; ix < res; ix++)
+        {
+            float x = (float(ix) / float(res))*2.0 - 1.0;
+            vec2 p = vec2(x, y);
+            float i = intensity(p);
+            
+            div += i;
+      #ifdef USE_GAMMA
+              accumulate += pow(texture(tex, uv+p*size*vec2(1.0, ratio)).rgb, vec3(gamma)) * i;
+      #else
+        accumulate += texture(tex, uv+p*size*vec2(1.0, ratio)).rgb * i;
+      #endif
+        }
+    }
+    #ifdef USE_GAMMA
+      return pow(accumulate / vec3(div), vec3(1.0 / gamma));
+  #else
+    return accumulate / vec3(div);
+  #endif
+}
+
+void mainImage( out vec4 fragColor, in vec2 fragCoord )
+{
+  vec2 uv = fragCoord/iResolution.xy;
+  float centerDepth = getDistance(iChannel1, uv);
+
+  const float focusDistance = 3.0;  // 对焦距离, 单位m.
+  float dis = calculate_coc(centerDepth, focusDistance)*0.08;
+  
+  fragColor = vec4(blur(iChannel0, dis, 32, uv, iResolution.x/iResolution.y), 1.0);
+}
+```
+
+<table>
+  <tr>
+    <td><img src="https://github.com/CSsaan/CSsaan.github.io/blob/main/_posts/csdn_md/img/1118.png?raw=true"/></td>
+    <td><img src="https://github.com/CSsaan/CSsaan.github.io/blob/main/_posts/csdn_md/img/1118d.png?raw=true"/></td>
+    <td><img src="https://github.com/CSsaan/CSsaan.github.io/blob/main/_posts/csdn_md/img/1118bokeh.png?raw=true"/></td>
+  </tr>
+  <tr>
+    <td class="text-center">原图</td>
+    <td class="text-center">深度图</td>
+    <td class="text-center">虚化图</td>
+  </tr>
+</table>
+
+## 结论
 
 在人像模式和AI虚化功能方面，各家目前针对图像虚化的效果均良好，各个产品都有其独特的技术优势。
 
@@ -199,6 +430,10 @@ tags:
 
 - 聚焦物体的焦平面内要清晰，模糊随着景深不同而不同。自然、真实的虚化散景光点形状也需要考虑。
 
+***文章中可能存在一些错误，欢迎大家补充和讨论。或者可以联系我，一起讨论。***
+
+---
+
 ### 参考文献
 
-[1]. Wolf Hauser, Balthazar Neveu, Jean-Benoit Jourdain, Clément Viard, Frédéric Guichard, "Image quality benchmark of computational bokeh"  in Proc. IS&T Int’l. Symp. on Electronic Imaging: Image Quality and System Performance XV,  2018,  pp 340-1 - 340-10,  https://doi.org/10.2352/ISSN.2470-1173.2018.12.IQSP-340
+[1]. Wolf Hauser, Balthazar Neveu, Jean-Benoit Jourdain, Clément Viard, Frédéric Guichard, "Image quality benchmark of computational bokeh"  in Proc. IS&T Int’l. Symp. on Electronic Imaging: Image Quality and System Performance XV,  2018,  pp 340-1 - 340-10,  <https:// .org/10.2352/ISSN.2470-1173.2018.12.IQSP-340>
