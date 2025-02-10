@@ -7,7 +7,7 @@
 
 #### 技术栈
 
-- **编程语言**：Python, C/C++, Java, GLSL
+- **编程语言**：C/C++, Python, Java, GLSL
 - **框架和库**：TensorFlow, PyTorch, OpenCV, OpenGL, Qt, MNN, NCNN, CMake, ImGui
 - **算法领域**：计算机视觉,  深度学习, 生成式模型, LLM
 - **开发工具**：Visual Studio, Visual Studio Code, PyCharm, Jupyter Notebook, Adroid Studio, Git, Docker
@@ -15,7 +15,8 @@
 #### [**开源项目**](/my/open-sources/)
 
 - **Android & windows Aplication**
-  - [Android Camera Special Effect by CS](https://github.com/CSsaan/Camera-Special-Effect-Face-Reshape):安卓美颜相机，瘦脸、大眼、亮牙。OpenCV+MNN+NCNN+GLM+OpenGLES3.0实现。
+  - [Android Camera Special Effect by CS](https://github.com/CSsaan/Camera-Special-Effect-Face-Reshape):安卓美颜相机，瘦脸、大眼、亮牙。使用OpenCV+MNN+NCNN+GLM+OpenGLES3.0实现。
+  - [BokehDepthByCS](https://github.com/CSsaan/BokehDepthByCS):WindowsAI实时虚化软件。这是一个 C++17 CMake OpenGL 项目，模型使用 NCNN 和 MNN 部署，它包括以下render库：GLFW、Glew和glm，它还使用ImGui作为 GUI。
   - [Matting Tool by CS](https://blog.csdn.net/sCs12321/article/details/124331491)：基于深度学习的人像抠图技术。
   - [Interpolation Tool by CS](https://blog.csdn.net/sCs12321/article/details/124550893)：基于深度学习的图像插值技术。
 - **Computer Vision**
@@ -37,15 +38,16 @@
 
 - **XX公司**： 2022-至今：算法工程师
   - 基于图传监视器的视频分析与视频处理`技术负责人`   ——   2019年10月-至今
-    - 项目主要内容：基于Android/IOS手机设备实时远程监控图传数据，并对视频流数据进行实时高性能的图像处理、图像分析、渲染等。
+    - 项目主要内容：在 Android/IOS 手机设备实时远程监控图传数据，支持软解/硬解下 Full Range/Limited Range，并对视频流数据进行实时高性能的图像处理、图像分析、渲染等。
       - 高性能 & 低功耗图像处理：NV12、YUYV视频源的图像实时60fps处理，内存优化，零拷贝纹理渲染，离线渲染，多处理的高性能叠加；
-      - 全功能：实现比例缩放、3DLUT、伪彩色、双阈值斑马纹、[锐化](https://blog.csdn.net/sCs12321/article/details/129459772)、放大镜、伪彩色、峰值对焦、波形图、直方图、矢量图、ToF点云渲染等。
+      - 全功能：实现比例缩放、3DLUT、九宫格、伪彩色、双阈值斑马纹、[锐化](https://blog.csdn.net/sCs12321/article/details/129459772)、放大镜、伪彩色、峰值对焦、波形图、直方图、矢量图、ToF点云渲染等。
       - 跨平台：部署落地在 Android、iOS；输出 Windows、Linux 端 Demo。
     - 项目收益：近一年（2023.12-2024.12）在 Apple Store 中下载量为34.5W。
   - 直播美颜`项目负责人`   ——   2023年11月-至今
-    - 项目主要内容：支持任意直播场景中实时美颜处理，提升皮肤美感，弥补ISP中人脸稍暗缺陷，提升直播质量。
+    - 项目主要内容：高通Android、Windows平台下，支持任意直播场景中实时美颜处理，提升皮肤美感，弥补ISP中人脸稍暗缺陷，提升直播质量。零拷贝纹理耗时优化，链路耗时波动优化，最终渲染耗时少于5ms。
+      - 贴纸：主要负责链路中图像算法与渲染实现，具体包括：贴纸的平移、旋转、缩放、镜像等；美颜中人脸贴纸图层对齐人脸关键点的三角剖分与渲染。
       - 皮肤分割：
-      - 自研绿幕抠图：
+      - 自研绿幕抠图：高效地去除视频背景，实现前景与背景的精确分离。涵盖了颜色转换、距离计算、图像腐蚀、高斯模糊、前景合成等功能。将 RGB 颜色空间转换为 YUV 颜色空间，用于计算与目标绿色的距离，提高抠图精度。图像处理：实现了基于距离图的腐蚀与高斯模糊处理，平滑边缘，减少噪声，提高合成效果。前景合成：根据 alpha 通道与前景图像进行精确合成，确保前景与背景的自然过渡。
       - 美白LUT调色模块：
       - 磨皮:
       - [瘦脸\大眼\亮牙](https://github.com/CSsaan/Camera-Special-Effect-Face-Reshape)
@@ -53,13 +55,14 @@
     - 项目主要内容：将单人或多人(5人)环境下人体皮肤区域进行快速、稳定地alpha抠图。
       - 数据采集：
       - 模型设计：基于 MobileNetV2 backbone 的deeplabV3+模型，采用四通道输入（通过不降分辨率，而采用叠加通道方式来提升性能），改进输出Head、损失函数来适应在alpha Matting任务中的需求。
-      - 帧间稳定性：
+      - 帧间稳定性：基于人脸检测区域进行卡尔曼滤波，实现帧间稳定性。
       - 模型部署：移动端采用snpe的PTQ量化方式，运行在DSP设备上; PC端采用NCNN进行部署。采用OpenCL进行前处理,在保持精度的同时,推理耗时11ms。
   - AI虚化直播:`技术负责人`   ——   2023年11月-至今
     - 项目主要内容：[AI深度估计模型](https://github.com/CSsaan/GitPod_Python/tree/main/Depth-Anything-V2-with-OpenGLBokeh-ONNX)，[模拟DSLR的光斑模糊渲染](https://blog.csdn.net/sCs12321/article/details/143893389)，模仿传统摄影大光圈浅景深的效果。
-      - 深度估计模型: 采用SOTA模型
-      - 对焦距离帧间稳定性:基于人脸检测区域进行卡尔曼滤波，实现帧间稳定性。
-      - 深度图帧间稳定性:基于帧卡尔曼滤波，实现模拟DSLR的光斑时的模糊稳定。
+      - 深度估计模型: 采用 DPT V2 模型，实现DataLoder与训练代码。
+      - 对焦距离帧间稳定性: 基于人脸检测区域进行卡尔曼滤波，实现帧间稳定性。
+      - 深度图帧间稳定性: 基于帧卡尔曼滤波，实现模拟DSLR的光斑时的模糊稳定。
+      - DSLR渲染：结合AI深度图、人像抠图mask、DP等不同格式类型的输入，来提升虚化准确性与效果。使用OpenGL模拟不同镜头F值、焦段下的散景效果，相较于市面上其他主流竞品的效果更加真实。
   - 视频降噪：`技术负责人`   ——   2023年11月-至今
     - 项目主要内容：基于nlMeans的视频降噪，降低传感器存在的亮度噪声与彩色噪声。
     - 性能：基于GPU加速的OpenGL优化实现，满足60fps的视频降噪。
