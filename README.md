@@ -1,4 +1,4 @@
-[Hux Blog](https://huangxuan.me)
+[My Blog - https://www.chenshuai.site/about/](https://www.chenshuai.site/about/)
 ================================
 
 > I never expected this to become popular.
